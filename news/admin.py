@@ -19,5 +19,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'content', 'category')
+    list_display = ('pk', 'title', 'flatform', 'category')
     ordering = ['-pk']
