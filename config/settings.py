@@ -12,7 +12,7 @@ SECRET_KEY = '=8+1(y)sy+mza8=lz$a9x5!xtt=fiz)l6ku-@a$*m^j0&w98c!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -65,7 +65,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'clean_toy_project.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -110,3 +110,11 @@ STATIC_URL = '/static/'
 
 CELERY_IMPORTS = ('news.tasks',)
 CELERY_RESULT_BACKEND = 'django-db'
+
+ROOT_URLCONF = 'config.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'config.renderers.CustomRenderer',
+    ]
+}

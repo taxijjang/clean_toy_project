@@ -13,11 +13,11 @@ class FlatFormAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'flatform', 'url')
+    list_display = ('pk', 'title', 'flat_form', 'url')
     ordering = ['-pk']
 
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'flatform', 'category')
+    list_display = ('pk', 'title', 'flat_form', 'category')
     ordering = ['-pk']
