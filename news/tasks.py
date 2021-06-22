@@ -12,7 +12,6 @@ from news.models.story import Story
 def crawlings():
     news_list = []
     for flatform in FlatForm.objects.all():
-        print(flatform)
         for category in flatform.categories.all():
             request = requests.get(category.full_url)
             soup = BeautifulSoup(request.text, 'html.parser')
