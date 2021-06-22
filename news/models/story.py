@@ -10,7 +10,7 @@ class Story(BaseModel):
     flat_form = models.ForeignKey('FlatForm', on_delete=models.SET_NULL, null=True, related_name='stories')
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='stories')
     news_image = models.ImageField(blank=True, null=True, upload_to=f"news/{url}")
-    news_story = models.CharField(max_length=5000)
+    news_story = models.CharField(max_length=5000, null=True)
 
     class Meta:
         ordering = ['rank']
