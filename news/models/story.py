@@ -9,8 +9,8 @@ class Story(BaseModel):
     url = models.CharField(max_length=500)
     flat_form = models.ForeignKey('FlatForm', on_delete=models.SET_NULL, null=True, related_name='stories')
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, related_name='stories')
-    news_image = models.ImageField(blank=True, null=True, upload_to=f"news/{url}")
-    news_story = models.CharField(max_length=5000, null=True)
+    image = models.ImageField(blank=True, null=True, upload_to=f"{flat_form}/{category}/{title}")
+    content = models.CharField(max_length=5000, blank=True, null=True)
 
     class Meta:
         ordering = ['rank']
