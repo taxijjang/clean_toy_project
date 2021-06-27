@@ -23,7 +23,6 @@ def crawlings():
 
             titles = news[0].find_all('a', class_=flatform.a_tag_class_name)
 
-            content = soup.select('#newsEndContents > span')
             for rank, title in enumerate(titles):
                 story = Story(
                     flat_form=flatform,
