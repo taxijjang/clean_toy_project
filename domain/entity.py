@@ -1,10 +1,15 @@
 class Story:
-    def __init__(self, title, rank, url, flat_form, category):
+    def __init__(self, title, rank, url, flat_form, category, id=None):
+        self._id = id
         self._title = title
         self._rank = rank
         self._url = url
         self._flat_form = flat_form
         self._category = category
+
+    @property
+    def id(self):
+        return self._id
 
     @property
     def title(self):
