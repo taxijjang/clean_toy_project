@@ -3,7 +3,7 @@
 ---
 
 # Use Case
-![Use Case](./images/user_case.png)
+![Use Case](images/use_case.png)
 
 # Diagram
 ![Diagram](./images/diagram.png)
