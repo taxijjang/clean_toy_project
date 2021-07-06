@@ -32,7 +32,7 @@ def crawlings():
                     rank=rank + 1,
                     title=title.text,
                     url=flatform.url[:-1] + title.get('href') if flatform.title == 'naver' else title.get('href')
-                )
+                ) # data class 로 저장
                 story_service = StoryService(
                     reader=StoryReader(),
                     writer=StoryWriter(),

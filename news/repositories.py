@@ -1,3 +1,4 @@
+# 도메인에 있으면 좋겠당
 from domain.application_repositories import InterfaceStoryReader
 from domain.application_repositories import InterfaceStoryWriter
 from domain.entity import Story as D_Story
@@ -13,6 +14,7 @@ class StoryReader(InterfaceStoryReader):
 
 class StoryWriter(InterfaceStoryWriter):
     def write(self, obj):
+        # 객체 저장만 하면 될것 같다.
         story = Story(
             title=obj.title,
             rank=obj.rank,
@@ -21,5 +23,5 @@ class StoryWriter(InterfaceStoryWriter):
             category=obj.category
         )
         story.save()
-
+        # return 만 사용
         return story
