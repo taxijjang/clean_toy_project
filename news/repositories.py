@@ -15,5 +15,4 @@ class StoryReader(InterfaceStoryReader):
 class StoryWriter(InterfaceStoryWriter):
     def write(self, story):
         story.save()
-        # return 만 사용
         return story
