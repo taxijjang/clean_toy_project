@@ -4,8 +4,8 @@ from celery import shared_task
 from bs4 import BeautifulSoup
 
 from domain.services import StoryService
-from news.repositories import StoryReader
-from news.repositories import StoryWriter
+from domain.repositories import StoryReader
+from domain.repositories import StoryWriter
 from news.models.flatform import FlatForm
 from news.models.story import Story
 

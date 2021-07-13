@@ -1,8 +1,7 @@
-# 도메인에 있으면 좋겠당
 from domain.application_repositories import InterfaceStoryReader
 from domain.application_repositories import InterfaceStoryWriter
 from domain.entity import Story as D_Story
-from .models import Story
+from news.models import Story
 from news.serializers.story_sz import StoryListSZ
 
 
