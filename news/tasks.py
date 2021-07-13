@@ -8,7 +8,7 @@ from domain.repositories import StoryReader
 from domain.repositories import StoryWriter
 from news.models.flatform import FlatForm
 from news.models.story import Story
-from domain.entity import Story as DataClass
+from domain.entity import Story as StoryEntity
 
 @shared_task
 def crawlings():
@@ -23,7 +23,7 @@ def crawlings():
 
             titles = news[0].find_all('a', class_=flatform.a_tag_class_name)
             for rank, title in enumerate(titles):
-                data = DataClass(
+                data = StoryEntity(
                     flat_form=flatform,
                     category=category,
                     rank=rank + 1,
