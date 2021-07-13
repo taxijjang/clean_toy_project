@@ -13,15 +13,7 @@ class StoryReader(InterfaceStoryReader):
 
 
 class StoryWriter(InterfaceStoryWriter):
-    def write(self, obj):
-        # 객체 저장만 하면 될것 같다.
-        story = Story(
-            title=obj.title,
-            rank=obj.rank,
-            url=obj.url,
-            flat_form=obj.flat_form,
-            category=obj.category
-        )
+    def write(self, story):
         story.save()
         # return 만 사용
         return story
