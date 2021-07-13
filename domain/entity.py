@@ -1,3 +1,7 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Story:
     def __init__(self, title, rank, url, flat_form, category, id=None):
         self._id = id
