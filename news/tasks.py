@@ -25,8 +25,8 @@ def crawlings():
             for rank, title in enumerate(titles):
                 # Entity 직접 호출은 안될듯.. use case 통해서 접근
                 data = StoryEntity(
-                    flat_form=flatform,
-                    category=category,
+                    flat_form=flatform.pk,
+                    category=category.pk,
                     rank=rank + 1,
                     title=title.text,
                     url=flatform.url[:-1] + title.get('href') if flatform.title == 'naver' else title.get('href')

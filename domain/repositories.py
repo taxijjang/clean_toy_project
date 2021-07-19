@@ -1,7 +1,7 @@
 from domain.application_repositories import InterfaceStoryReader
 from domain.application_repositories import InterfaceStoryWriter
 from domain.entity import Story as D_Story
-from news.models import Story
+from news.models import Story, Category, FlatForm
 from news.serializers.story_sz import StoryListSZ
 
 
@@ -13,5 +13,12 @@ class StoryReader(InterfaceStoryReader):
 
 class StoryWriter(InterfaceStoryWriter):
     def write(self, story):
-        story.save()
-        return story
+        new_story = Story(
+            rank=story.rank,
+            title=story.title,
+            url=story.url,
+            category=Category.objects.get(id=story.category),
+            flat_form=FlatForm.objects.get(id=story.flat_form)
+        )
+        new_story.save()
+        return new_story
