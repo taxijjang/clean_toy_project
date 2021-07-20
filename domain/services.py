@@ -11,11 +11,11 @@ class StoryService:
 
     def execute(self):
         story = Story(
-            title=self._data.title,
-            rank=self._data.rank,
-            url=self._data.url,
-            flat_form=self._data.flat_form,
-            category=self._data.category
+            title=self._data.get('title'),
+            rank=self._data.get('rank'),
+            url=self._data.get('url'),
+            flat_form=self._data.get('flat_form'),
+            category=self._data.get('category'),
         )
 
         result = self._writer.write(story)

@@ -7,7 +7,6 @@ class Story:
         self._flat_form = flat_form
         self._category = category
 
-    # dataclass 정의 확인
     @property
     def id(self):
         return self._id

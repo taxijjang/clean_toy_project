@@ -23,8 +23,7 @@ def crawlings():
 
             titles = news[0].find_all('a', class_=flatform.a_tag_class_name)
             for rank, title in enumerate(titles):
-                # Entity 직접 호출은 안될듯.. use case 통해서 접근
-                data = StoryEntity(
+                data = dict(
                     flat_form=flatform.pk,
                     category=category.pk,
                     rank=rank + 1,
