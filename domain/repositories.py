@@ -14,11 +14,11 @@ class StoryReader(InterfaceStoryReader):
 class StoryWriter(InterfaceStoryWriter):
     def write(self, story):
         new_story = Story(
-            rank=story.rank,
-            title=story.title,
-            url=story.url,
-            category=Category.objects.get(id=story.category),
-            flat_form=FlatForm.objects.get(id=story.flat_form)
+            rank=story.get('rank'),
+            title=story.get('title'),
+            url=story.get('url'),
+            category=Category.objects.get(id=story.get('category')),
+            flat_form=FlatForm.objects.get(id=story.get('flat_form'))
         )
         new_story.save()
         return new_story
