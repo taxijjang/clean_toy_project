@@ -10,12 +10,11 @@ class StoryService:
         self._data = data
 
     def execute(self):
-        story = self._data
-        result = self._writer.write(story)
-        return {
-            'id': result.id,
-            'title': result.title,
-            'url': result.url,
-            'flat_form': result.flat_form.title,
-            'category': result.category.title,
-        }
+        story = Story(
+            title=self._data.get('title'),
+            rank=self._data.get('rank'),
+            url=self._data.get('url'),
+            flat_form=self._data.get('flat_form'),
+            category=self._data.get('category')
+        )
+        self._writer.write(story)
